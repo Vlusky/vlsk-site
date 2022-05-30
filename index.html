@@ -113,7 +113,7 @@
   <body>
 	<div>
 	  <div x-data="{current : 'home', load : 'true'}">
-		<div x-show="!load" style="background-color:rgb(0,0,0); z-index:2; width:100%; height:100%; position:absolute; text-color:white;">loading AlpineJS...<br><br><br> WARNING, this site is in very early stages, expect some funny bugs because CSS f---in sucks</div>
+		<div x-show="!load" style="background-color:rgb(0,0,0); z-index:2; width:100%; height:100%; position:absolute; text-color:white;">loading AlpineJS...</div>
 	    <div class="selector">
 	      <button class="button" x-bind:class="current === 'home' ? 'current' : ''" x-on:click="current = 'home' ">Home</button>
 	      <button class="button" x-bind:class="current === 'about-me' ? 'current' : ''" x-on:click="current = 'about-me' ">About Me</button>
@@ -287,6 +287,9 @@
 			</div>
 		  </div>
 		</div>
+	  </div>
+	  <div style="padding-top:0.2rem;opacity:0.5">
+	    This site is still in VERY early stages. Expect some bugs (Especially on mobile) because CSS be the stink.
 	  </div>
 	</div>
   </body>
