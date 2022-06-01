@@ -1,296 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Vlusk's Site</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa"/>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet"/>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <style>
     body {
-	  font-family: "Comfortaa", sans-serif;
-	  font-size: 16px;
-	  color: white;
-	  text-align: center;
-	  text-shadow: 0.1rem 0.1rem 0.2rem black;
-	  padding: 0;
-	  margin: auto;
-	  background-color: #222;
-	  line-height: 1.6rem
-	}
-	
-	p {
-	  padding: 0.2rem;
-	  padding-top: 0;
-	  font-size: 1.2rem;
-	}
-	
-	
-	.header {
-	  font-family: 'Atkinson Hyperlegible', sans-serif;
-	}
-	
-	.selector {
-	  padding-bottom: 1rem;
-	  padding-top: 2rem
-	}
-	
-	.button {
-	  font-family: "Comfortaa", sans-serif;
-	  font-weight: bold;
-	  letter-spacing: 0.1rem;
-	  background-color: #33a0c4;
-	  color: #fff;
-	  border: none;
-	  padding: 0.5rem;
-	  border-radius: 0.3rem;
-	  transition: 0.2s;
-	  cursor: pointer;
-	}
-	
-	.button:hover {
-	  background-color: #55d1fa;
-	}
+      font-family: "Comfortaa", sans-serif;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      text-shadow: 0.1rem 0.1rem 0.2rem black;
+      padding: 0;
+      margin: auto;
+      background-color: #222;
+      line-height: 1.6rem;
+    }
 
-	.current {
-	  background-color: #e854cf;
-	  padding-left: 2rem;
-	  padding-right: 2rem
-	}
-	
-	.social-element {
-	  font-family: "Comfortaa", sans-serif;
-	  font-weight: bold;
-	  font-size: 1.5rem;
-	  letter-spacing: 0.1rem;
-	  color: #fff;
-	  border: none;
-	  padding: 0.5rem;
-	  margin: 0.5rem;
-	  border-radius: 0.3rem;
-	  transition: 0.2s;
-	  cursor: pointer;
-	  height: 4rem;
-	  width: 20rem;
-	  filter: brightness(1);
-	  box-shadow: 0.2rem 0.2rem 1rem black;
-	}
-	
-	.social-element:hover {
-	  filter: brightness(1.25);
-	}
-	
-	.content {
-	  margin-top: 1rem;
-	  height: 80vh;
-	  width: 100%;
-	  background: rgb(32,0,59);
-	  background: linear-gradient(220deg, rgba(32,0,59,1) 0%, rgba(0,13,74,1) 100%);
-	  overflow: auto;
-	}
-	
-	.inside {
-	  padding-left:10%;
-	  padding-right:10%;
-	  padding-top:0.01rem;
-	  padding-bottom:1rem;
-	  margin-bottom:1.5rem;
-	  margin-top:1.5rem;
-	  box-shadow: 0.2rem 0.2rem 1rem black;
-	}
-	
-	.box-shadow-01 {
-	  box-shadow: 0.2rem 0.2rem 1rem black;
-	}
+    p {
+      padding: 0.2rem;
+      padding-top: 0;
+      font-size: 1.2rem;
+    }
 
+    .header {
+      font-family: "Atkinson Hyperlegible", sans-serif;
+    }
+
+    .selector {
+      padding-bottom: 1rem;
+      padding-top: 2rem;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+    }
+
+    .button {
+      font-family: "Comfortaa", sans-serif;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      background-color: #33a0c4;
+      color: #fff;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 0.3rem;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #55d1fa;
+    }
+
+    .current {
+      background-color: #e854cf;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .social-element {
+      font-family: "Comfortaa", sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+      color: #fff;
+      border: none;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      border-radius: 0.3rem;
+      transition: 0.2s;
+      cursor: pointer;
+      height: 4rem;
+      width: 20rem;
+      filter: brightness(1);
+      box-shadow: 0.2rem 0.2rem 1rem black;
+    }
+
+    .social-element:hover {
+      filter: brightness(1.25);
+    }
+
+    .content {
+      margin-top: 1rem;
+      height: 80vh;
+      width: 100%;
+      background: rgb(32, 0, 59);
+      background: linear-gradient(
+        220deg,
+        rgba(32, 0, 59, 1) 0%,
+        rgba(0, 13, 74, 1) 100%
+      );
+      overflow: auto;
+    }
+
+    .inside {
+      padding-left: 10%;
+      padding-right: 10%;
+      padding-top: 0.01rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+      box-shadow: 0.2rem 0.2rem 1rem black;
+    }
+
+    .box-shadow-01 {
+      box-shadow: 0.2rem 0.2rem 1rem black;
+    }
+
+    .flex-gallery {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 700px) {
+      .selector {
+        justify-content: space-evenly;
+        width:100%
+      }
+    
+    }
   </style>
-  <script>
-
-  </script>
+  <script></script>
   <body>
-	<div>
-	  <div x-data="{current : 'home', load : 'true'}">
-		<div x-show="!load" style="background-color:rgb(0,0,0); z-index:2; width:100%; height:100%; position:absolute; text-color:white;">loading AlpineJS...</div>
-	    <div class="selector">
-	      <button class="button" x-bind:class="current === 'home' ? 'current' : ''" x-on:click="current = 'home' ">Home</button>
-	      <button class="button" x-bind:class="current === 'about-me' ? 'current' : ''" x-on:click="current = 'about-me' ">About Me</button>
-	      <button class="button" x-bind:class="current === 'works' ? 'current' : ''" x-on:click="current = 'works' ">Works</button>
-	      <button class="button" x-bind:class="current === 'socials' ? 'current' : ''" x-on:click="current = 'socials' ">Socials</button>
-		</div>
-		<div class="content">
-		  <div x-show="current === 'home'">
-		    <div style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);">
-			  <div style="fill:white; width:30rem">
-        <svg
-          class="logo"
-          xmlns:dc="http://purl.org/dc/elements/1.1/"
-          xmlns:cc="http://creativecommons.org/ns#"
-          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-          xmlns:svg="http://www.w3.org/2000/svg"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-          xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-          viewBox="0 0 1024 245"
-          version="1.1"
-          id="svg8"
-          inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
-          sodipodi:docname="VLUSK-VECTOR.svg"
+    <div>
+      <div x-data="{current : 'home', load : 'true'}">
+        <div
+          x-show="!load"
+          style="
+            background-color: rgb(0, 0, 0);
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+          "
         >
-          <defs id="defs2" />
-          <sodipodi:namedview
-            id="base"
-            pagecolor="#ffffff"
-            bordercolor="#666666"
-            borderopacity="1.0"
-            inkscape:pageopacity="0.0"
-            inkscape:pageshadow="2"
-            inkscape:zoom="0.175"
-            inkscape:cx="1807.8522"
-            inkscape:cy="472.80009"
-            inkscape:document-units="px"
-            inkscape:current-layer="layer1"
-            inkscape:document-rotation="0"
-            showgrid="false"
-            inkscape:window-width="1366"
-            inkscape:window-height="715"
-            inkscape:window-x="-8"
-            inkscape:window-y="-8"
-            inkscape:window-maximized="1"
-            inkscape:snap-object-midpoints="false"
-          />
-          <metadata id="metadata5">
-            <rdf:RDF>
-              <cc:Work rdf:about="">
-                <dc:format>image/svg+xml</dc:format>
-                <dc:type
-                  rdf:resource="http://purl.org/dc/dcmitype/StillImage"
-                />
-                <dc:title></dc:title>
-              </cc:Work>
-            </rdf:RDF>
-          </metadata>
-          <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
-            <path
-              d="m 24.756258,25.15063 1.2e-5,199.7009 199.70078,-199.7009 H 174.53189 L 74.681479,125.00109 V 25.15063 Z"
-              id="path1015"
-            />
-            <path
-              d="m 232.96787,25.15063 h 49.92522 V 174.9263 l 99.85044,4e-5 v 49.92519 l -149.77566,-3e-5 z"
-              id="path1093"
-            />
-            <path
-              d="M 399.76514,25.150671 V 224.85153 l 99.85056,4e-5 49.92521,-99.85043 V 25.150671 H 499.6157 v 99.850469 l -25.54771,49.92523 -24.37749,-3e-5 V 25.150671 Z"
-              id="path1117"
-            />
-            <path
-              d="m 670.66851,25.150671 -4e-5,49.925241 h -49.9252 l 49.9252,99.850458 v 49.9252 l -99.8504,-4e-5 v -49.92519 h 49.9252 L 570.81807,75.075872 V 25.150671 Z"
-              id="path1119"
-            />
-            <path
-              id="path1121"
-              d="M 691.94568,25.150671 V 224.85142 h 49.9262 v -49.92625 l 49.92416,49.92625 h 49.92621 L 791.79604,174.92517 841.72225,75.074786 V 25.150671 h -49.92621 v 49.924115 l -33.28276,66.567624 -16.6414,-16.64136 V 25.150671 Z"
-            />
-            <path
-              d="M 1008.5196,25.150671 H 958.59442 L 934.21693,75.075872 908.66918,25.150671 h -49.92521 l 49.92521,99.850469 -49.92521,99.85043 h 49.92521 z"
-              id="path1146"
-            />
-          </g>
-        </svg>
+          loading AlpineJS...
+        </div>
+        <div class="selector">
+          <button
+            class="button"
+            x-bind:class="current === 'home' ? 'current' : ''"
+            x-on:click="current = 'home' "
+          >
+            Home
+          </button>
+          <button
+            class="button"
+            x-bind:class="current === 'about-me' ? 'current' : ''"
+            x-on:click="current = 'about-me' "
+          >
+            About Me
+          </button>
+          <button
+            class="button"
+            x-bind:class="current === 'works' ? 'current' : ''"
+            x-on:click="current = 'works' "
+          >
+            Works
+          </button>
+          <button
+            class="button"
+            x-bind:class="current === 'socials' ? 'current' : ''"
+            x-on:click="current = 'socials' "
+          >
+            Socials
+          </button>
+        </div>
+        <div class="content">
+          <div x-show="current === 'home'">
+            <div
+              style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              "
+            >
+              <div style="fill: white; width: 30rem">
+                <svg
+                  class="logo"
+                  xmlns:dc="http://purl.org/dc/elements/1.1/"
+                  xmlns:cc="http://creativecommons.org/ns#"
+                  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                  xmlns:svg="http://www.w3.org/2000/svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                  viewBox="0 0 1024 245"
+                  version="1.1"
+                  id="svg8"
+                  inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
+                  sodipodi:docname="VLUSK-VECTOR.svg"
+                >
+                  <defs id="defs2" />
+                  <sodipodi:namedview
+                    id="base"
+                    pagecolor="#ffffff"
+                    bordercolor="#666666"
+                    borderopacity="1.0"
+                    inkscape:pageopacity="0.0"
+                    inkscape:pageshadow="2"
+                    inkscape:zoom="0.175"
+                    inkscape:cx="1807.8522"
+                    inkscape:cy="472.80009"
+                    inkscape:document-units="px"
+                    inkscape:current-layer="layer1"
+                    inkscape:document-rotation="0"
+                    showgrid="false"
+                    inkscape:window-width="1366"
+                    inkscape:window-height="715"
+                    inkscape:window-x="-8"
+                    inkscape:window-y="-8"
+                    inkscape:window-maximized="1"
+                    inkscape:snap-object-midpoints="false"
+                  />
+                  <metadata id="metadata5">
+                    <rdf:RDF>
+                      <cc:Work rdf:about="">
+                        <dc:format>image/svg+xml</dc:format>
+                        <dc:type
+                          rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+                        />
+                        <dc:title></dc:title>
+                      </cc:Work>
+                    </rdf:RDF>
+                  </metadata>
+                  <g
+                    inkscape:label="Layer 1"
+                    inkscape:groupmode="layer"
+                    id="layer1"
+                  >
+                    <path
+                      d="m 24.756258,25.15063 1.2e-5,199.7009 199.70078,-199.7009 H 174.53189 L 74.681479,125.00109 V 25.15063 Z"
+                      id="path1015"
+                    />
+                    <path
+                      d="m 232.96787,25.15063 h 49.92522 V 174.9263 l 99.85044,4e-5 v 49.92519 l -149.77566,-3e-5 z"
+                      id="path1093"
+                    />
+                    <path
+                      d="M 399.76514,25.150671 V 224.85153 l 99.85056,4e-5 49.92521,-99.85043 V 25.150671 H 499.6157 v 99.850469 l -25.54771,49.92523 -24.37749,-3e-5 V 25.150671 Z"
+                      id="path1117"
+                    />
+                    <path
+                      d="m 670.66851,25.150671 -4e-5,49.925241 h -49.9252 l 49.9252,99.850458 v 49.9252 l -99.8504,-4e-5 v -49.92519 h 49.9252 L 570.81807,75.075872 V 25.150671 Z"
+                      id="path1119"
+                    />
+                    <path
+                      id="path1121"
+                      d="M 691.94568,25.150671 V 224.85142 h 49.9262 v -49.92625 l 49.92416,49.92625 h 49.92621 L 791.79604,174.92517 841.72225,75.074786 V 25.150671 h -49.92621 v 49.924115 l -33.28276,66.567624 -16.6414,-16.64136 V 25.150671 Z"
+                    />
+                    <path
+                      d="M 1008.5196,25.150671 H 958.59442 L 934.21693,75.075872 908.66918,25.150671 h -49.92521 l 49.92521,99.850469 -49.92521,99.85043 h 49.92521 z"
+                      id="path1146"
+                    />
+                  </g>
+                </svg>
               </div>
-			  <div style="font-size: 1.25rem;padding-top:1%;width:30rem">
-			    A computer nerd who just so happen to know a thing or two about midi notes
-			  </div>
-			</div>
-		  </div>
-		  <div x-show="current === 'about-me'">
-		    <div class="inside" style="background: rgb(203,46,91); background: linear-gradient(220deg, rgba(203,46,91,1) 0%, rgba(190,44,170,1) 100%);">
-		    <h1 class="header"> About me... </h1>
-			<p>
-			Hello! I'm mostly just a hobbyist that apparently have one too many hobbies. I enjoy learning new things. Whether or not I can keep up with it is another story. But I do love the feeling of acquiring a new knowledge or skill. If nothing more than just a cool new party trick I like to give to people.
-			</p>
-			<p>
-			I have always been obsessed with computers since I was a kid. Messing around with the home computer, going through each and every setting to see what they do. My early days start with the copy of Windows Movie Maker we had. I had such a blast messing around with it, and making things. Followed by making random animations with PowerPoint.
-			</p>
-			<p>
-			Nowadays, I have decided on a few things I wanted to focus. That being art, music, motion design, a bit of programming, and now the "Vlusky the Husky" Youtube channel where I make videos upon various things. Mostly anime. The workflow I have devised for each was a result of years of trial and error. Researching tools, trying what works best for me and what my 10 y.o. laptop could run. 
-			</p>
-			</div>
-			
-			<div class="inside" style="background: rgb(46,197,203); background: linear-gradient(220deg, rgba(46,197,203,1) 0%, rgba(44,113,190,1) 100%);">
-			<h1 class="header"> Tools! </h1>
-			<p>
-			Animation/Motion Design - Blender3D, After Effects<br>
-			Video Editing - kdenlive<br>
-			Art - Krita<br>
-			Graphic Design - Affinity Photo, Figma<br>
-			Writing - Notepad++, Google Docs<br>
-			Coding - VSCode, the actual framework/language is uncertain<br>
-			</p>
-			</div>
-		  </div>
-		  <div x-show="current === 'works'">
-		    <div class="inside" style="background: rgb(0,133,47); background: linear-gradient(80deg, rgba(0,133,47,1) 0%, rgba(11,167,123,1) 100%);">
-			  <h1 class="header"> Graphic </h1>
-			  
-			  <div style="display:flex; height:12.4rem; justify-content:space-between">
-			    <img class="box-shadow-01" src="./asset/graphic-ruins.png"/>
-			    <img class="box-shadow-01" src="./asset/graphic-endcrystal.png"/>
-			    <img class="box-shadow-01" src="./asset/graphic-crystals.png"/>
-			  </div>
-			  <div style="display:flex; height:18.5rem; justify-content:space-between; padding-top:1rem">
-			    <img class="box-shadow-01" src="./asset/graphic-lock.png"/>
-			    <img class="box-shadow-01" src="./asset/graphic-iyashikei.png"/>
-			  </div>
-			</div>
-			
-			<div class="inside" style="background: rgb(0,20,133); background: linear-gradient(80deg, rgba(0,20,133,1) 0%, rgba(11,161,167,1) 100%);">
-			  <h1 class="header"> Motion </h1>
-			  <div style="display:flex; height:14rem; gap:1rem; justify-content:space-between">
-				<img class="box-shadow-01" src="./asset/motion-sonzai.gif"/>
-  				<img class="box-shadow-01" src="./asset/motion-temptation.gif"/>
-				<img class="box-shadow-01" src="./asset/motion-contrast.gif"/>
-			  </div>
-			  
-			  <div style="display:flex; gap:1rem; justify-content:space-between; padding-top:1rem">
-			    <iframe class="box-shadow-01" width="373" height="195" src="https://www.youtube.com/embed/L_iHuC7Wvo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe class="box-shadow-01" width="373" height="195" src="https://www.youtube.com/embed/Lfl2LHf-4Jw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe class="box-shadow-01" width="373" height="195" src="https://www.youtube.com/embed/HXeW1cCc_mE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			  </div>
-			</div>
-			<div class="inside" style="background: rgb(103,0,89); background: linear-gradient(190deg, rgba(103,0,89,1) 0%, rgba(138,0,44,1) 100%);">
-			  <h1 class="header"> Videos </h1>
-			  <div style="display:flex; gap:1rem">
-			    <iframe class="box-shadow-01" width="560" height="315" src="https://www.youtube.com/embed/TADtZYJVc4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			    <iframe class="box-shadow-01" width="560" height="315" src="https://www.youtube.com/embed/e73JIsjQffI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			  </div>
-			</div>
-			
-			<div class="inside" style="background: rgb(171,0,0); background: linear-gradient(34deg, rgba(171,0,0,1) 0%, rgba(116,0,26,1) 100%);">
-			  <h1 class="header"> Music </h1>
-			  <div style="display:flex; gap:1rem; justify-content:space-between">
-			    <iframe class="box-shadow-01" width="350" height="350" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1246708291&color=%2394ccdc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-			    <iframe class="box-shadow-01" width="350" height="350" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/943014580&color=%2394ccdc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-			    <iframe class="box-shadow-01" width="350" height="350" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1100644294&color=%2394ccdc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-			  </div>
-			</div>
-		  </div>
-		  <div x-show="current === 'socials'">
-		    <div style="position:absolute; top:55%; left:50%; transform: translate(-50%, -50%);">
-			<a href="https://www.youtube.com/channel/UCqmTTMCwW-N-v32DY-g2Glw"> <button class="social-element" style="background: rgb(235,76,154); background: linear-gradient(220deg, rgba(235,76,154,1) 0%, rgba(190,44,44,1) 100%);">Youtube</button></a><br>
-			<a href="https://twitter.com/vlusky_husky"> <button class="social-element" style="background: rgb(60,216,249);background: linear-gradient(220deg, rgba(60,216,249,1) 0%, rgba(138,115,255,1) 100%);">Twitter</button></a><br>
-			<a href="https://soundcloud.com/vlusky-husky"> <button class="social-element" style="background: rgb(249,183,60);background: linear-gradient(220deg, rgba(249,183,60,1) 0%, rgba(255,150,115,1) 100%);">Soundcloud</button></a><br>
-			<a href="https://vlusky.bandcamp.com/"> <button class="social-element" style="background: rgb(190,60,249);background: linear-gradient(220deg, rgba(190,60,249,1) 0%, rgba(115,120,255,1) 100%);">Bandcamp</button></a><br>
-			<a href="https://vluskyonly.newgrounds.com/audio"> <button class="social-element" style="background: rgb(249,171,60);background: linear-gradient(220deg, rgba(249,171,60,1) 0%, rgba(241,77,133,1) 100%);">Newgrounds</button></a><br>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	  <div style="padding-top:0.2rem;opacity:0.5">
-	    This site is still in VERY early stages. Expect some bugs (Especially on mobile) because CSS be the stink.
-	  </div>
-	</div>
+              <div style="font-size: 1.25rem; padding-top: 1%; width: 30rem">
+                A computer nerd who just so happen to know a thing or two about
+                midi notes
+              </div>
+            </div>
+          </div>
+          <div x-show="current === 'about-me'">
+            <div
+              class="inside"
+              style="
+                background: rgb(203, 46, 91);
+                background: linear-gradient(
+                  220deg,
+                  rgba(203, 46, 91, 1) 0%,
+                  rgba(190, 44, 170, 1) 100%
+                );
+              "
+            >
+              <h1 class="header">About me...</h1>
+              <p>
+                Hello! I'm mostly just a hobbyist that apparently have one too
+                many hobbies. I enjoy learning new things. Whether or not I can
+                keep up with it is another story. But I do love the feeling of
+                acquiring a new knowledge or skill. If nothing more than just a
+                cool new party trick I like to give to people.
+              </p>
+              <p>
+                I have always been obsessed with computers since I was a kid.
+                Messing around with the home computer, going through each and
+                every setting to see what they do. My early days start with the
+                copy of Windows Movie Maker we had. I had such a blast messing
+                around with it, and making things. Followed by making random
+                animations with PowerPoint.
+              </p>
+              <p>
+                Nowadays, I have decided on a few things I wanted to focus. That
+                being art, music, motion design, a bit of programming, and now
+                the "Vlusky the Husky" Youtube channel where I make videos upon
+                various things. Mostly anime. The workflow I have devised for
+                each was a result of years of trial and error. Researching
+                tools, trying what works best for me and what my 10 y.o. laptop
+                could run.
+              </p>
+            </div>
+
+            <div
+              class="inside"
+              style="
+                background: rgb(46, 197, 203);
+                background: linear-gradient(
+                  220deg,
+                  rgba(46, 197, 203, 1) 0%,
+                  rgba(44, 113, 190, 1) 100%
+                );
+              "
+            >
+              <h1 class="header">Tools!</h1>
+              <p>
+                Animation/Motion Design - Blender3D, After Effects<br />
+                Video Editing - kdenlive<br />
+                Art - Krita<br />
+                Graphic Design - Affinity Photo, Figma<br />
+                Writing - Notepad++, Google Docs<br />
+                Coding - VSCode, the actual framework/language is uncertain<br />
+              </p>
+            </div>
+          </div>
+          <div x-show="current === 'works'">
+            <div
+              class="inside"
+              style="
+                background: rgb(0, 133, 47);
+                background: linear-gradient(
+                  80deg,
+                  rgba(0, 133, 47, 1) 0%,
+                  rgba(11, 167, 123, 1) 100%
+                );
+              "
+            >
+              <h1 class="header">Graphic</h1>
+
+              <div class="flex-gallery">
+                <img style="height: 12rem;" class="box-shadow-01" src="./asset/graphic-ruins.png" />
+                <img style="height: 12rem;" class="box-shadow-01" src="./asset/graphic-endcrystal.png" />
+                <img style="height: 12rem;" class="box-shadow-01" src="./asset/graphic-crystals.png" />
+              </div>
+              <div class="flex-gallery">
+                <img style="height: 12rem;" class="box-shadow-01" src="./asset/graphic-lock.png" />
+                <img style="height: 12rem;" class="box-shadow-01" src="./asset/graphic-iyashikei.png" />
+              </div>
+            </div>
+
+            <div
+              class="inside"
+              style="
+                background: rgb(0, 20, 133);
+                background: linear-gradient(
+                  80deg,
+                  rgba(0, 20, 133, 1) 0%,
+                  rgba(11, 161, 167, 1) 100%
+                );
+              "
+            >
+              <h1 class="header">Motion</h1>
+
+              <div class="flex-gallery">
+                <img style="height: 14rem;" class="box-shadow-01" src="./asset/motion-contrast.gif" />
+                <img style="height: 14rem;" class="box-shadow-01" src="./asset/motion-sonzai.gif" />
+                <img style="height: 14rem;" class="box-shadow-01" src="./asset/motion-temptation.gif" />
+              </div>
+
+              <div class="flex-gallery">
+                <iframe
+                  class="box-shadow-01"
+                  width="30%"
+                  height="195"
+                  style="min-width: 20rem;"
+                  src="https://www.youtube.com/embed/L_iHuC7Wvo8"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <iframe
+                  class="box-shadow-01"
+                  width="30%"
+                  height="195"
+                  style="min-width: 20rem;"
+                  src="https://www.youtube.com/embed/Lfl2LHf-4Jw"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <iframe
+                  class="box-shadow-01"
+                  width="30%"
+                  height="195"
+                  style="min-width: 20rem";
+                  src="https://www.youtube.com/embed/HXeW1cCc_mE"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div
+              class="inside"
+              style="
+                background: rgb(103, 0, 89);
+                background: linear-gradient(
+                  190deg,
+                  rgba(103, 0, 89, 1) 0%,
+                  rgba(138, 0, 44, 1) 100%
+                );
+              "
+            >
+              <h1 class="header">Videos</h1>
+              <div class="flex-gallery">
+                <iframe
+                  class="box-shadow-01"
+                  width="520"
+                  height="315"
+                  src="https://www.youtube.com/embed/TADtZYJVc4k"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <iframe
+                  class="box-shadow-01"
+                  width="520"
+                  height="315"
+                  src="https://www.youtube.com/embed/e73JIsjQffI"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div
+              class="inside"
+              style="
+                background: rgb(171, 0, 0);
+                background: linear-gradient(
+                  34deg,
+                  rgba(171, 0, 0, 1) 0%,
+                  rgba(116, 0, 26, 1) 100%
+                );
+              "
+            >
+              <h1 class="header">Music</h1>
+              <div class="flex-gallery">
+                <iframe
+                  class="box-shadow-01"
+                  width="300"
+                  height="300"
+                  scrolling="no"
+                  frameborder="no"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1246708291&color=%2394ccdc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                ></iframe>
+                <iframe
+                  class="box-shadow-01"
+                  width="300"
+                  height="300"
+                  scrolling="no"
+                  frameborder="no"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/943014580&color=%2394ccdc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                ></iframe>
+                <iframe
+                  class="box-shadow-01"
+                  width="300"
+                  height="300"
+                  scrolling="no"
+                  frameborder="no"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1100644294&color=%2394ccdc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div x-show="current === 'socials'">
+            <div style="display: flex; flex-direction: column;">
+              <a href="https://www.youtube.com/channel/UCqmTTMCwW-N-v32DY-g2Glw">
+                <button
+                  class="social-element"
+                  style="
+                    background: rgb(235, 76, 154);
+                    background: linear-gradient(
+                      220deg,
+                      rgba(235, 76, 154, 1) 0%,
+                      rgba(190, 44, 44, 1) 100%
+                    );
+                  "
+                >
+                  Youtube
+                </button>
+              </a>
+              <a href="https://twitter.com/vlusky_husky">
+                <button
+                  class="social-element"
+                  style="
+                    background: rgb(60, 216, 249);
+                    background: linear-gradient(
+                      220deg,
+                      rgba(60, 216, 249, 1) 0%,
+                      rgba(138, 115, 255, 1) 100%
+                    );
+                  "
+                >
+                  Twitter
+                </button>
+              </a>
+              <a href="https://soundcloud.com/vlusky-husky">
+                <button
+                  class="social-element"
+                  style="
+                    background: rgb(249, 183, 60);
+                    background: linear-gradient(
+                      220deg,
+                      rgba(249, 183, 60, 1) 0%,
+                      rgba(255, 150, 115, 1) 100%
+                    );
+                  "
+                >
+                  Soundcloud
+                </button>
+              </a>
+              <a href="https://vlusky.bandcamp.com/">
+                <button
+                  class="social-element"
+                  style="
+                    background: rgb(190, 60, 249);
+                    background: linear-gradient(
+                      220deg,
+                      rgba(190, 60, 249, 1) 0%,
+                      rgba(115, 120, 255, 1) 100%
+                    );
+                  "
+                >
+                  Bandcamp
+                </button>
+              </a>
+              <a href="https://vluskyonly.newgrounds.com/audio">
+                <button
+                  class="social-element"
+                  style="
+                    background: rgb(249, 171, 60);
+                    background: linear-gradient(
+                      220deg,
+                      rgba(249, 171, 60, 1) 0%,
+                      rgba(241, 77, 133, 1) 100%
+                    );
+                  "
+                >
+                  Newgrounds
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top: 0.2rem; opacity: 0.5">
+        This site is still in VERY early stages. Expect some bugs (Especially on
+        mobile) because CSS be the stink.
+      </div>
+    </div>
   </body>
 </html>
